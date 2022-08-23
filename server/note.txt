@@ -1,0 +1,7 @@
+1-npm init -y  ile package.json oluşturduk
+2-"type": "module", ekledik çünkü require yerine import kullanmamız gerekiyor.
+3-npm i express dotenv google-auth-library  ====> (google-auth-library), Google API'leri ile OAuth 2.0 yetkilendirmesini ve kimlik doğrulamasını kullanmak için Google'ın resmi olarak desteklenen node.js istemci kitaplığıdır.
+4-npm i -D nodemon  ===> nodemon, dizindeki dosya değişiklikleri algılandığında düğüm uygulamasını otomatik olarak yeniden başlatarak node.js tabanlı uygulamaların geliştirilmesine yardımcı olan bir araçtır.
+5-package.json scripts alanına 
+    - "start": "nodemon index.js"
+5-CORS hatası için npm install cors --save paketini yükledim ve route dan hemen önce çağırdım.
