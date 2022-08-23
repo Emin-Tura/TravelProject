@@ -2,9 +2,11 @@ import { Mail, Notifications } from "@mui/icons-material";
 import { Avatar, Badge, Box, IconButton, Tooltip } from "@mui/material";
 import React from "react";
 import { useValue } from "../../context/ContextProvider";
+import useCheckToken from "../../hooks/useCheckToken";
 import UserMenu from "./UserMenu";
 
 function UserIcons() {
+  useCheckToken();
   const {
     state: { currentUser },
   } = useValue();

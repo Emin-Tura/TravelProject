@@ -2,8 +2,10 @@ import { Logout, Settings } from "@mui/icons-material";
 import { ListItemIcon, Menu, MenuItem } from "@mui/material";
 import React from "react";
 import { useValue } from "../../context/ContextProvider";
+import useCheckToken from "../../hooks/useCheckToken";
 
 const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
+  useCheckToken();
   const {
     state: { currentUser },
     dispatch,
@@ -20,12 +22,14 @@ const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          authorization: `Bearer ${currentUser.token}`,
+          authorization: `Bearer ${currentUser.token}t`,
         },
       });
       const data = await response.json();
       console.log(data);
       if (!data.success) {
+        if (response.status === 401)
+          dispatch({ type: "UPDATE_USER", payload: null });
         throw data.message;
       }
     } catch (error) {
