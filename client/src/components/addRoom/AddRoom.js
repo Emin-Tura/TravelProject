@@ -15,9 +15,9 @@ import AddImages from "./addImages/AddImages";
 const AddRoom = () => {
   const [activeStep, setActiveStep] = React.useState(0);
   const [steps, setSteps] = React.useState([
-    { label: "Location", completed: true },
-    { label: "Details", completed: true },
-    { label: "Images", completed: true },
+    { label: "Location", completed: false },
+    { label: "Details", completed: false },
+    { label: "Images", completed: false },
   ]);
 
   const handleNext = () => {
@@ -58,12 +58,11 @@ const AddRoom = () => {
       </Stepper>
       <Box>
         {
-          ({
+          {
             0: <AddLocation />,
             1: <AddDetails />,
             2: <AddImages />,
-          },
-          [activeStep])
+          }[activeStep]
         }
       </Box>
       <Stack
