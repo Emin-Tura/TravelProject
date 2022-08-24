@@ -25,7 +25,7 @@ app.use(cors());
 
 app.use("/user", userRouter);
 app.use("/room", roomRouter);
-app.use("/", (req, res) => res.json({ message: "Welcome to our API" }));
+app.get("/", (req, res) => res.json({ message: "Welcome to our API" }));
 app.use("/", (req, res) =>
   res.status(404).json({ succes: false, message: "Not Found" })
 );
