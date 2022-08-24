@@ -12,6 +12,7 @@ import {
 } from "@mui/material";
 import { Close, Send } from "@mui/icons-material";
 import { useValue } from "../../context/ContextProvider";
+import { updateProfile } from "../../actions/user";
 
 const Profile = () => {
   const {
@@ -27,6 +28,8 @@ const Profile = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    const name = nameRef.current.value;
+    updateProfile(currentUser, { name, file: profile.file }, dispatch);
   };
 
   const handleChange = (e) => {

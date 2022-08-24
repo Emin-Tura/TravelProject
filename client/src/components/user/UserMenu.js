@@ -8,39 +8,12 @@ import Profile from "./Profile";
 const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
   useCheckToken();
   const {
-    state: { currentUser },
     dispatch,
+    state: { currentUser },
   } = useValue();
-
   const handleCloseUserMenu = () => {
     setAnchorUserMenu(null);
   };
-
-  // const testAuthorization = async () => {
-  //   const url = process.env.REACT_APP_SERVER_URL + "/room";
-  //   try {
-  //     const response = await fetch(url, {
-  //       method: "POST",
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //         authorization: `Bearer ${currentUser.token}t`,
-  //       },
-  //     });
-  //     const data = await response.json();
-  //     console.log(data);
-  //     if (!data.success) {
-  //       if (response.status === 401)
-  //         dispatch({ type: "UPDATE_USER", payload: null });
-  //       throw data.message;
-  //     }
-  //   } catch (error) {
-  //     dispatch({
-  //       type: "UPDATE_ALERT",
-  //       payload: { open: true, severity: "error", message: error.message },
-  //     });
-  //   }
-  // };
-
   return (
     <>
       <Menu
@@ -49,23 +22,25 @@ const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
         onClose={handleCloseUserMenu}
         onClick={handleCloseUserMenu}
       >
-        <MenuItem
-          onClick={() =>
-            dispatch({
-              type: "UPDATE_PROFILE",
-              payload: {
-                open: true,
-                file: null,
-                photoURL: currentUser?.photoURL,
-              },
-            })
-          }
-        >
-          <ListItemIcon>
-            <Settings fontSize="small" />
-          </ListItemIcon>
-          Profile
-        </MenuItem>
+        {!currentUser.google && (
+          <MenuItem
+            onClick={() =>
+              dispatch({
+                type: "UPDATE_PROFILE",
+                payload: {
+                  open: true,
+                  file: null,
+                  photoURL: currentUser?.photoURL,
+                },
+              })
+            }
+          >
+            <ListItemIcon>
+              <Settings fontSize="small" />
+            </ListItemIcon>
+            Profile
+          </MenuItem>
+        )}
         <MenuItem
           onClick={() => dispatch({ type: "UPDATE_USER", payload: null })}
         >
