@@ -5,3 +5,6 @@
 5-package.json scripts alanına 
     - "start": "nodemon index.js"
 5-CORS hatası için npm install cors --save paketini yükledim ve route dan hemen önce çağırdım.
+6-npm i mongoose ===> Mongoose, asenkron bir ortamda çalışmak üzere tasarlanmış bir MongoDB nesne modelleme aracıdır.
+7-npm i bcrypt ====> A library to help you hash passwords.
+8-npm i jsonwebtoken

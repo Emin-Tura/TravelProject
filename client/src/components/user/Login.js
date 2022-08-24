@@ -13,6 +13,7 @@ import { useValue } from "../../context/ContextProvider";
 import { Close, Send } from "@mui/icons-material";
 import PasswordField from "./PasswordField";
 import GoogleOneTapLogin from "./GoogleOneTapLogin";
+import { register, login } from "../../actions/user";
 
 function Login() {
   const {
@@ -32,28 +33,21 @@ function Login() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    //testing Loading
-    dispatch({ type: "START_LOADING" });
-
-    setTimeout(() => {
-      dispatch({ type: "END_LOADING" });
-    }, 1000);
-
-    //testing Notifications
+    const email = emailRef.current.value;
     const password = passwordRef.current.value;
+    if (!isRegister) return login({ email, password }, dispatch);
+    const name = nameRef.current.value;
     const confirmPassword = confirmPasswordRef.current.value;
-
-    if (password !== confirmPassword) {
-      dispatch({
+    if (password !== confirmPassword)
+      return dispatch({
         type: "UPDATE_ALERT",
         payload: {
           open: true,
           severity: "error",
-          message: "Password do not match",
+          message: "Passwords do not match",
         },
       });
-    }
+    register({ name, email, password }, dispatch);
   };
 
   useEffect(() => {

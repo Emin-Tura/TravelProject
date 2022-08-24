@@ -4,7 +4,3 @@ REQUIREMENT
 -npm install @mui/icons-material
 -npm install jwt-decode
 
------------------------------------------
-1-Navbar eklendi ve login butonuna işlevsellik kazandırıldı.
-2-Loading.js, Notification.js, GoogleOneTapLogin.js, PasswordField.js eklendi.
-
