@@ -7,12 +7,16 @@ import {
   Stepper,
 } from "@mui/material";
 import { Stack } from "@mui/system";
-import React from "react";
+import React, { useEffect } from "react";
 import AddLocation from "./addLocation/AddLocation";
 import AddDetails from "./addDetails/AddDetails";
 import AddImages from "./addImages/AddImages";
+import { useValue } from "../../context/ContextProvider";
 
 const AddRoom = () => {
+  const {
+    state: { images },
+  } = useValue();
   const [activeStep, setActiveStep] = React.useState(0);
   const [steps, setSteps] = React.useState([
     { label: "Location", completed: false },
@@ -38,6 +42,21 @@ const AddRoom = () => {
 
   const findUnfinished = () => {
     return steps.findIndex((step) => !step.completed);
+  };
+
+  useEffect(() => {
+    if (images.length) {
+      if (!steps[2].completed) setComplete(2, true);
+    } else {
+      if (steps[2].completed) setComplete(2, false);
+    }
+  }, [images]);
+
+  const setComplete = (index, status) => {
+    setSteps((steps) => {
+      steps[index].completed = status;
+      return [...steps];
+    });
   };
 
   return (

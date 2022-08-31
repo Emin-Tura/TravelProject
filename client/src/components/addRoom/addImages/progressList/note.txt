@@ -1,0 +1,1 @@
+Bu kısımda firebase image upload ettik.

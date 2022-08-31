@@ -4,4 +4,5 @@ REQUIREMENT
 -npm install @mui/icons-material
 -npm install jwt-decode
 -npm install uuid
-npm install firebase
+-npm install firebase
+-npm install react-dropzone  ====> HTML5 uyumlu bir sürükle ve bırak bölgesi oluşturmak için basit React kancası.
