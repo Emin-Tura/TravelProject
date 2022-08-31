@@ -5,6 +5,7 @@ import { getStorage } from "firebase/storage";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
+//Bu bilgiler firebae projesi oluştuturken geliyor.
 const firebaseConfig = {
   apiKey: "AIzaSyCyqeNTRuJpNReQUlV1zWj_WdnmzgIADnc",
   authDomain: "travel-45227.firebaseapp.com",
