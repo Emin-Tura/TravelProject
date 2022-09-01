@@ -9,3 +9,20 @@ REQUIREMENT
 -npm i mapbox-gl => web üzerinde etkileşimli, özelleştirilebilir vektör haritaları için bir JavaScript kitaplığıdır. 
 -npm i react-map-gl => Mapbox GL JS uyumlu kitaplıklar için bir React API sağlamak üzere tasarlanmış bir React bileşenleri paketidir 
 -npm i @mapbox/mapbox-gl-geocoder => Mapbox Geocoding API'sini kullanan mapbox-gl-js için bir coğrafi kodlayıcı kontrolü . 
+
+
+
+
+
+
+
+
+
+
+---------------------------------------
+Geocoder ===> Yer araması yapmak için kullanıyoruz.
+NavigationControl ===> Sağ alttaki contoreller. Map görüntüsünü düzenleyebiliyoruz.
+Marker ===> İşaretleme aracı. onDragEnd toolu markın son konumunu almak için kullanıyoruz.
+GeolocateControl ===> Tıkladığımızda konumumuzu gösteriyor.
+trackUserLocation ===> kullanıcı nerde onu bir daire şeklinde belirtir.
+ReactMapGL de initialViewState değerini verirsek açılır açılmaz o konuma gider
