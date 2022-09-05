@@ -27,7 +27,6 @@ const BottomNav = () => {
           1: <Rooms />,
           2: (
             <Protected>
-              {" "}
               <AddRoom setPage={setValue} />
             </Protected>
           ),

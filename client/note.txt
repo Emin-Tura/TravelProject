@@ -9,6 +9,7 @@ REQUIREMENT
 -npm i mapbox-gl => web üzerinde etkileşimli, özelleştirilebilir vektör haritaları için bir JavaScript kitaplığıdır. 
 -npm i react-map-gl => Mapbox GL JS uyumlu kitaplıklar için bir React API sağlamak üzere tasarlanmış bir React bileşenleri paketidir 
 -npm i @mapbox/mapbox-gl-geocoder => Mapbox Geocoding API'sini kullanan mapbox-gl-js için bir coğrafi kodlayıcı kontrolü . 
+-npm i supercluster ===> Tarayıcılar ve Node.js için coğrafi nokta kümelemesi için çok hızlı bir JavaScript kitaplığı.
 
 
 
