@@ -16,7 +16,7 @@ const DrawerHeader = styled("div")(({ theme }) => ({
 const Sidebar = ({ isOpen, setIsOpen }) => {
   const { containerRef } = useValue();
   return (
-    <Drawer variant="persistent" hideBackDrop={true} open={isOpen}>
+    <Drawer variant="persistent" open={isOpen}>
       <DrawerHeader>
         <Typography>Apply Search or Filter:</Typography>
         <IconButton onClick={() => setIsOpen(false)}>
