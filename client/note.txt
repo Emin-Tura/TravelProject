@@ -11,8 +11,8 @@ REQUIREMENT
 -npm i @mapbox/mapbox-gl-geocoder => Mapbox Geocoding API'sini kullanan mapbox-gl-js için bir coğrafi kodlayıcı kontrolü . 
 -npm i supercluster ===> Tarayıcılar ve Node.js için coğrafi nokta kümelemesi için çok hızlı bir JavaScript kitaplığı.
 -npm i swiper  ==> Swiper - donanım hızlandırmalı geçişler ve şaşırtıcı yerel davranışa sahip ücretsiz ve en modern mobil dokunmatik kaydırıcıdır. Mobil web sitelerinde, mobil web uygulamalarında ve mobil yerel/karma uygulamalarda kullanılması amaçlanmıştır.
-
-
+-npm i react-router-dom
+-npm i moment ==> Tarihleri ​​ayrıştırmak, doğrulamak, işlemek ve biçimlendirmek için bir JavaScript tarih kitaplığı.
 
 
 

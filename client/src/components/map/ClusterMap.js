@@ -27,6 +27,7 @@ const ClusterMap = () => {
 
   useEffect(() => {
     getRooms(dispatch);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   useEffect(() => {
@@ -61,6 +62,7 @@ const ClusterMap = () => {
     if (mapRef.current) {
       setBounds(mapRef.current.getMap().getBounds().toArray().flat());
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [mapRef?.current]);
   return (
     <ReactMapGL

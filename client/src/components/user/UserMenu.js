@@ -1,8 +1,9 @@
-import { Logout, Settings } from "@mui/icons-material";
+import { Dashboard, Logout, Settings } from "@mui/icons-material";
 import { ListItemIcon, Menu, MenuItem } from "@mui/material";
 import React from "react";
 import { useValue } from "../../context/ContextProvider";
 import useCheckToken from "../../hooks/useCheckToken";
+import { useNavigate } from "react-router-dom";
 import Profile from "./Profile";
 
 const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
@@ -14,6 +15,9 @@ const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
   const handleCloseUserMenu = () => {
     setAnchorUserMenu(null);
   };
+
+  const navigate = useNavigate();
+
   return (
     <>
       <Menu
@@ -41,6 +45,12 @@ const UserMenu = ({ anchorUserMenu, setAnchorUserMenu }) => {
             Profile
           </MenuItem>
         )}
+        <MenuItem onClick={() => navigate("/dashboard")}>
+          <ListItemIcon>
+            <Dashboard fontSize="small" />
+          </ListItemIcon>
+          Dashboard
+        </MenuItem>
         <MenuItem
           onClick={() => dispatch({ type: "UPDATE_USER", payload: null })}
         >
