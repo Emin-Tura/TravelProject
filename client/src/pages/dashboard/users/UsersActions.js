@@ -5,7 +5,7 @@ import { green } from "@mui/material/colors";
 import { updateStatus } from "../../../actions/user";
 import { useValue } from "../../../context/ContextProvider";
 
-const UserActions = ({ params, rowId, setRowId }) => {
+const UsersActions = ({ params, rowId, setRowId }) => {
   const { dispatch } = useValue();
   const [loading, setLoading] = React.useState(false);
   const [success, setSuccess] = React.useState(false);
@@ -74,4 +74,4 @@ const UserActions = ({ params, rowId, setRowId }) => {
   );
 };
 
-export default UserActions;
+export default UsersActions;

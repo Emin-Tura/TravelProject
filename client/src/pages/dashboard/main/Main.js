@@ -106,9 +106,7 @@ const Main = ({ setSelectedLink, link }) => {
                   </ListItemAvatar>
                   <ListItemText
                     primary={room?.title}
-                    secondary={`Time Created: ${moment(
-                      room?.createdAt
-                    ).fromNow()}`}
+                    secondary={`Added: ${moment(room?.createdAt).fromNow()}`}
                   />
                 </ListItem>
                 {i !== 3 && <Divider variant="inset" />}

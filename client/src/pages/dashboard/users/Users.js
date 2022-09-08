@@ -1,10 +1,10 @@
+import { useEffect, useMemo, useState } from "react";
 import { Avatar, Box, Typography } from "@mui/material";
-import React, { useEffect, useMemo } from "react";
 import { DataGrid, gridClasses } from "@mui/x-data-grid";
 import { useValue } from "../../../context/ContextProvider";
 import { getUsers } from "../../../actions/user";
 import moment from "moment";
-import UserActions from "./UserActions";
+import UsersActions from "./UsersActions";
 
 const Users = ({ setSelectedLink, link }) => {
   const {
@@ -12,8 +12,8 @@ const Users = ({ setSelectedLink, link }) => {
     dispatch,
   } = useValue();
 
-  const [pageSize, setPageSize] = React.useState(5);
-  const [rowId, setRowId] = React.useState(null);
+  const [pageSize, setPageSize] = useState(5);
+  const [rowId, setRowId] = useState(null);
 
   useEffect(() => {
     setSelectedLink(link);
@@ -27,6 +27,8 @@ const Users = ({ setSelectedLink, link }) => {
         headerName: "Avatar",
         width: 60,
         renderCell: (params) => <Avatar src={params.row.photoURL} />,
+        sortable: false,
+        filterable: false,
       },
       { field: "name", headerName: "Name", width: 170 },
       { field: "email", headerName: "Email", width: 200 },
@@ -52,13 +54,13 @@ const Users = ({ setSelectedLink, link }) => {
         renderCell: (params) =>
           moment(params.row.createdAt).format("YYYY-MM-DD HH:MM:SS"),
       },
-      { field: "_id", headerName: "id", width: 220 },
+      { field: "_id", headerName: "Id", width: 220 },
       {
-        filed: "actions",
+        field: "actions",
         headerName: "Actions",
         type: "actions",
         renderCell: (params) => (
-          <UserActions {...{ params, rowId, setRowId }} />
+          <UsersActions {...{ params, rowId, setRowId }} />
         ),
       },
     ],
