@@ -1,11 +1,11 @@
 REQUIREMENT
 
--npm install @mui/material @emotion/react @emotion/styled
--npm install @mui/icons-material
--npm install jwt-decode
--npm install uuid
--npm install firebase
--npm install react-dropzone  ====> HTML5 uyumlu bir sürükle ve bırak bölgesi oluşturmak için basit React kancası.
+-npm i @mui/material @emotion/react @emotion/styled
+-npm i @mui/icons-material
+-npm i jwt-decode
+-npm i uuid
+-npm i firebase
+-npm i react-dropzone  ====> HTML5 uyumlu bir sürükle ve bırak bölgesi oluşturmak için basit React kancası.
 -npm i mapbox-gl => web üzerinde etkileşimli, özelleştirilebilir vektör haritaları için bir JavaScript kitaplığıdır. 
 -npm i react-map-gl => Mapbox GL JS uyumlu kitaplıklar için bir React API sağlamak üzere tasarlanmış bir React bileşenleri paketidir 
 -npm i @mapbox/mapbox-gl-geocoder => Mapbox Geocoding API'sini kullanan mapbox-gl-js için bir coğrafi kodlayıcı kontrolü . 
@@ -13,6 +13,7 @@ REQUIREMENT
 -npm i swiper  ==> Swiper - donanım hızlandırmalı geçişler ve şaşırtıcı yerel davranışa sahip ücretsiz ve en modern mobil dokunmatik kaydırıcıdır. Mobil web sitelerinde, mobil web uygulamalarında ve mobil yerel/karma uygulamalarda kullanılması amaçlanmıştır.
 -npm i react-router-dom
 -npm i moment ==> Tarihleri ​​ayrıştırmak, doğrulamak, işlemek ve biçimlendirmek için bir JavaScript tarih kitaplığı.
+-npm i recharts ===> Recharts, React ve D3 ile oluşturulmuş Yeniden Tanımlanmış bir grafik kitaplığıdır .
 
 
 
