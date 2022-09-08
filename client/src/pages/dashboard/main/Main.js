@@ -1,4 +1,4 @@
-import { Group, GroupAdd, MapsHomeWork } from "@mui/icons-material";
+import { Group, MapsHomeWork } from "@mui/icons-material";
 import {
   Avatar,
   Box,
