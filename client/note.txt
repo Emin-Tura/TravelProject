@@ -14,8 +14,7 @@ REQUIREMENT
 -npm i react-router-dom
 -npm i moment ==> Tarihleri ​​ayrıştırmak, doğrulamak, işlemek ve biçimlendirmek için bir JavaScript tarih kitaplığı.
 -npm i recharts ===> Recharts, React ve D3 ile oluşturulmuş Yeniden Tanımlanmış bir grafik kitaplığıdır .
-
-
+-npm i @mui/x-data-grid
 
 
 
