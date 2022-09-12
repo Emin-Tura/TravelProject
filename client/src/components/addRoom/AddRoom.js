@@ -12,12 +12,12 @@ import AddLocation from "./addLocation/AddLocation";
 import AddDetails from "./addDetails/AddDetails";
 import AddImages from "./addImages/AddImages";
 import { useValue } from "../../context/ContextProvider";
-import { Send } from "@mui/icons-material";
+import { Cancel, Send } from "@mui/icons-material";
 import { createRoom } from "../../actions/room";
 
-const AddRoom = ({ setPage }) => {
+const AddRoom = () => {
   const {
-    state: { images, details, location, currentUser },
+    state: { images, details, location, currentUser, updatedRoom },
     dispatch,
   } = useValue();
   const [activeStep, setActiveStep] = React.useState(0);
@@ -97,8 +97,12 @@ const AddRoom = ({ setPage }) => {
       description: details.description,
       images,
     };
-    createRoom(room, currentUser, dispatch, setPage);
+    if (updatedRoom)
+      return updatedRoom(room, currentUser, dispatch, updatedRoom);
+    createRoom(room, currentUser, dispatch);
   };
+
+  const handleCancel = () => {};
 
   return (
     <Container sx={{ my: 4 }}>
@@ -137,17 +141,28 @@ const AddRoom = ({ setPage }) => {
             Next
           </Button>
         </Stack>
-        {showSubmit && (
-          <Stack sx={{ alignItems: "center" }}>
+
+        <Stack
+          sx={{ alignItems: "center", justifyContent: "center", gap: 2 }}
+          direction="row"
+        >
+          {showSubmit && (
             <Button
               variant="contained"
               endIcon={<Send />}
               onClick={handleSubmit}
             >
-              Submit
+              {updatedRoom ? "Update" : "Submit"}
             </Button>
-          </Stack>
-        )}
+          )}
+          <Button
+            variant="outlined"
+            endIcon={<Cancel />}
+            onClick={handleCancel}
+          >
+            Cancel
+          </Button>
+        </Stack>
       </Box>
     </Container>
   );

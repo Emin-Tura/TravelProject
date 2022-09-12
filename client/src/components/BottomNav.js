@@ -10,14 +10,18 @@ import ClusterMap from "./map/ClusterMap";
 import Rooms from "./rooms/Rooms";
 import AddRoom from "./addRoom/AddRoom";
 import Protected from "./protected/Protected";
+import { useValue } from "../context/ContextProvider";
 
 const BottomNav = () => {
-  const [value, setValue] = React.useState(0);
+  const {
+    state: { section },
+    dispatch,
+  } = useValue();
   const ref = React.useRef();
 
   useEffect(() => {
     ref.current.ownerDocument.body.scrollTop = 0;
-  }, [value]);
+  }, [section]);
 
   return (
     <Box ref={ref}>
@@ -27,18 +31,20 @@ const BottomNav = () => {
           1: <Rooms />,
           2: (
             <Protected>
-              <AddRoom setPage={setValue} />
+              <AddRoom />
             </Protected>
           ),
-        }[value]
+        }[section]
       }
       <Paper
         elevation={3}
         sx={{ position: "fixed", bottom: 0, left: 0, right: 0, zIndex: 2 }}
       >
         <BottomNavigation
-          value={value}
-          onChange={(e, newValue) => setValue(newValue)}
+          value={section}
+          onChange={(e, newValue) =>
+            dispatch({ type: "UPDATE_SECTION", payload: newValue })
+          }
         >
           <BottomNavigationAction label="Map" icon={<LocationOn />} />
           <BottomNavigationAction label="Rooms" icon={<Bed />} />

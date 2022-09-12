@@ -19,6 +19,10 @@ REQUIREMENT
 
 
 
+https://www.youtube.com/watch?v=hwgw4B4Xvl4&list=PLufbXXGswL_pS6rdWbDO56oiZovLWE_rs&index=21 ==> Prevent losing Edited information if you close the page. Are you sure you want to leave?beforeUnload
+
+17:18 de kaldın
+
 
 
 ---------------------------------------
